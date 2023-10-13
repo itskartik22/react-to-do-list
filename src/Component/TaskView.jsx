@@ -15,7 +15,7 @@ export default function TaskView(props) {
         }}
       >
         <PiPlusBold className="text-xl mx-1" />
-        <label className="w-full w-full text-lg font-medium" htmlFor="task-input">
+        <label className="w-full text-lg font-medium" htmlFor="task-input">
           Add New Task
         </label>
       </div>
