@@ -1,7 +1,9 @@
 import Task from "./Task.jsx";
+import { useContext } from "react";
+import { TasksContext, TasksDispatchContext } from "../Context/TasksContext.js";
 
 export default function TaskList(props) {
-  const tasks = props.tasks;
+  const tasks = useContext(TasksContext);
   const taskStack = tasks.map((t) => {
     return (
       <Task
@@ -9,13 +11,21 @@ export default function TaskList(props) {
         id={t.id}
         data={t.data}
         done={t.done}
-        viewSet = {props.viewSet}
-        completeTask={() => {
-          props.onCompleteTask(t.id);
-        }}
-        deleteTask={() => {
-          props.onDeleteTask(t.id);
-        }}
+        // viewSet = {props.viewSet}
+        // completeTask={() => {
+        //   // props.onCompleteTask(t.id);
+        //   dispatch({
+        //     type: "complete",
+        //     id: t.id,
+        //   });
+        // }}
+        // deleteTask={() => {
+        //   // props.onDeleteTask(t.id);
+        //   dispatch({
+        //     type: "delete",
+        //     id: t.id,
+        //   });
+        // }}
       />
     );
   });
