@@ -1,6 +1,6 @@
 import Task from "./Task.jsx";
 import { useContext } from "react";
-import { TasksContext, TasksDispatchContext } from "../Context/TasksContext.js";
+import { TasksContext} from "../Context/TasksContext.js";
 
 export default function TaskList(props) {
   const tasks = useContext(TasksContext);
