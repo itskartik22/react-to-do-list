@@ -11,7 +11,7 @@ import {
 } from "./Context/TasksContext.js";
 
 export default function App() {
-  const [nextId, setId] = useState(3);
+  const [nextId, setId] = useState(initialTasks.length);
   const [tasks, dispatchTaskHandler] = useReducer(tasksReducer, initialTasks);
   const [view, dispatchViewHandler] = useReducer(viewReducer, {
     value: 1,
@@ -86,35 +86,35 @@ export default function App() {
 }
 
 const initialTasks = [
-  {
-    id: 0,
-    data: {
-      task: "English Practice",
-      description: "Improve English Vocabulary by practicing it.",
-      _duedate: "2024-04-12",
-    },
-    done: true,
-  },
-  {
-    id: 1,
-    data: {
-      task: " Open-Source Contribution",
-      description:
-        "Start focusing on GSOC'24 by contributing on open source project.",
-      _duedate: "2023-12-03",
-    },
-    done: false,
-  },
-  {
-    id: 2,
-    data: {
-      task: "GSOC'24 Beginning",
-      description:
-        "Fully focus on Selected open-source project. Contribute with full dedication to it.",
-      _duedate: "2024-02-05",
-    },
-    done: false,
-  },
+  // {
+  //   id: 0,
+  //   data: {
+  //     task: "English Practice",
+  //     description: "Improve English Vocabulary by practicing it.",
+  //     _duedate: "2024-04-12",
+  //   },
+  //   done: true,
+  // },
+  // {
+  //   id: 1,
+  //   data: {
+  //     task: " Open-Source Contribution",
+  //     description:
+  //       "Start focusing on GSOC'24 by contributing on open source project.",
+  //     _duedate: "2023-12-03",
+  //   },
+  //   done: false,
+  // },
+  // {
+  //   id: 2,
+  //   data: {
+  //     task: "GSOC'24 Beginning",
+  //     description:
+  //       "Fully focus on Selected open-source project. Contribute with full dedication to it.",
+  //     _duedate: "2024-02-05",
+  //   },
+  //   done: false,
+  // },
 ];
 
 const viewReducer = (view, action) => {
